@@ -161,7 +161,8 @@ func (b *EthereumRPC) Initialize() error {
 		b.Network = "testnet"
 		break
 	default:
-		return errors.Errorf("Unknown network id %v", id)
+		b.Testnet = false
+		b.Network = "livenet"
 	}
 	glog.Info("rpc: block chain ", b.Network)
 
